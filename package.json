@@ -1,0 +1,34 @@
+{
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "cross-env": "^7.0.2"
+  },
+  "name": "nodeservice",
+  "version": "1.0.0",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug": "npm run server:debugger",
+    "dev": "npm run start",
+    "start": "npm run server",
+    "server:debugger": "cross-env NODE_ENV=develop node --inspect=9222 ./src/server.js",
+    "server": "cross-env NODE_ENV=develop nodemon ./src/server.js",
+    "pro:server": "cross-env NODE_ENV=production pm2 start ./src/server.js -i max"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://192.168.1.250/nezada/nodeservice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "elasticsearch": "^16.7.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8",
+    "log4js": "^6.2.0"
+  }
+}
